@@ -4,7 +4,8 @@
 
 def rehh(lists):
     from functools import reduce
-    a, *b = lists
-    b = b[::-1]
-    res = pow(a, reduce(lambda x, y: pow(y, x), b, 1))
+    b = lists[::-1]
+    res = reduce(lambda x, y: pow(y, x), b, 1)
     return res, str(res)[-1]
+
+print(rehh([3,4,2]))
